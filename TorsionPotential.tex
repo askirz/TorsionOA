@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\ba{\begin{eqnarray}}
+\def\ea{\end{eqnarray}}
+\def\md{{\mathrm{d}}}
+\def\mx{{\mathrm{x}}}
+\def\my{{\mathrm{y}}}
+\def\mz{{\mathrm{z}}}
+\def\l{\left}
+\def\r{\right}
+\def\ll{\left\{}
+\def\rl{\right\}}
+\def\lc{\left[}
+\def\rc{\right]}
+\def\lp{\left(}
+\def\rp{\right)}
+\def\la{\left\langle}
+\def\ra{\right\rangle} 
+ 
+\title{ Torsion potential
+formalism.}
+\author{{\sf Aureliano Skirzewski}\thanks{{\sf 
+askirz@gmail.com, skirz@ula.ve}}
+\\![
+{\sf Centro de Astrofisica Teorica, } \\
+{\sf Universidad de los Andes, 5101 Merida, Venezuela.}, {\sf Oscar Castillo }\thanks{{\sf 
+oscarcastillo@gmail.com, oscarcastillo@ula.ve}}
+\\![
+{\sf Centro de Astrofisica Teorica, } \\
+{\sf Universidad en Chile, 5101 .} }
+\begin{document}
+\maketitle
+\begin{abstract}
+We use torsion definition to explore new representation of
+torsion as the field strength of it's gauge field potential.
+
+\end{abstract}
+
+Formally, torsion is defined through \be \label{def1}\l[\nabla _\mu,\nabla_\nu\r]f(\mx)=T_\mu{}^\rho{}_\nu\partial_\rho f(\mx),\ee
+
+thus, we propose to interpret $ \partial_\rho $ as the local group generators, leading us to the conclusion that $\nabla_\mu$ acting on vector fiels must be represented as $\nabla_\mu A^\nu=\partial_\mu A^\nu+\Gamma_\mu{}^\nu{}_\rho A^\rho+\gamma_\mu^\rho\partial_\rho A^\nu,$ 
+which, if we substitute in (\ref{def1}),
+
+\ba \l[\nabla _\mu,\nabla_\nu\r]f(\mx)&=&\lc \lp\delta_\mu^\lambda+\gamma_\mu^\lambda\rp\partial_\lambda \lp\delta_\nu^\rho+\gamma_\nu^\rho\rp\partial_\rho - \Gamma_\mu{}^\rho{}_\nu \lp\delta_\rho^\lambda+\gamma_\rho^\lambda\rp\partial_\lambda\r.  \\ \nonumber && \l. -\lp\delta_\nu^\lambda+\gamma_\nu^\lambda\rp\partial_\lambda \lp\delta_\mu^\rho+\gamma_\mu^\rho\rp\partial_\rho + \Gamma_\nu{}^\rho{}_\mu \lp\delta_\rho^\lambda+\gamma_\rho^\lambda\rp\partial_\lambda \rc f(\mx) \\ &=& \lc\lp\delta_{[\mu|}^\lambda+\gamma_{[\mu|}^\lambda\rp\partial_\lambda \gamma_{|\nu]}^\rho - \Gamma_{[\mu}{}^\lambda{}_{\nu]} \lp\delta_\lambda^\rho+\gamma_\lambda^\rho\rp\partial_\rho \rc f(\mx) \\ &=& \lc - \Gamma_{[\mu}{}^\rho{}_{\nu]}+\partial_{[\mu}\gamma_{\nu]}^\rho + \gamma_{[\mu|}^\lambda\partial_\lambda \gamma_{|\nu]}^\rho- \Gamma_{[\mu}{}^\lambda{}_{\nu]} \gamma_\lambda^\rho \rc\partial_\rho f(\mx)\ea 
+
+By definition, torsion should be acknowledged as a field strength tensor for the $\gamma_\nu^\rho$ plus the antisymmetric part of $ \Gamma_{[\mu}{}^\rho{}_{\nu]} $
+\be T_\mu {}^\rho {}_\nu = \partial_{[\mu}\gamma_{\nu]}^\rho + \gamma_{[\mu|}^\lambda\partial_\lambda \gamma_{|\nu]}^\rho - \Gamma_{[\mu}{}^\rho{}_{\nu]} - \Gamma_{[\mu}{}^\lambda{}_{\nu]} \gamma_\lambda^\rho \ee
+
+\end{document}
