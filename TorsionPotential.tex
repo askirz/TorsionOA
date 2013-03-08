@@ -1,11 +1,14 @@
 \documentclass[12pt]{article}
-
+\usepackage{amsmath,amsthm,latexsym,amssymb,amsfonts,epsfig} 
+%------------------
+%--------- Definitions
+%------------------
 \def\be{\begin{equation}}
 \def\ee{\end{equation}}
 \def\ba{\begin{eqnarray}}
 \def\ea{\end{eqnarray}}
 \def\md{{\mathrm{d}}}
-\def\mx{{\mathrm{x}}}
+%\def\mx{{\mathrm{x}}}
 \def\my{{\mathrm{y}}}
 \def\mz{{\mathrm{z}}}
 \def\l{\left}
@@ -19,33 +22,156 @@
 \def\la{\left\langle}
 \def\ra{\right\rangle} 
  
-\title{ Torsion potential
-formalism.}
-\author{{\sf Aureliano Skirzewski}\thanks{{\sf 
+
+%------------------
+%--------- Title Page
+%------------------
+\title{ Torsion potential formalism.}
+
+\author{{\sf Aureliano Skirzewski}\thanks{{\tt
 askirz@gmail.com, skirz@ula.ve}}
-\\![
-{\sf Centro de Astrofisica Teorica, } \\
-{\sf Universidad de los Andes, 5101 Merida, Venezuela.}, {\sf Oscar Castillo }\thanks{{\sf 
-oscarcastillo@gmail.com, oscarcastillo@ula.ve}}
-\\![
-{\sf Centro de Astrofisica Teorica, } \\
-{\sf Universidad en Chile, 5101 .} }
+\\
+{\small Centro de Astrofisica Teorica, } \\
+{\small Universidad de los Andes, 5101 Merida, Venezuela.} \\ 
+\and 
+{\sf Oscar Castillo-Felisola}\thanks{{\tt
+o.castillo.felisola@gmail.com}}
+\\
+{\small UTFSM and CCTVal, CHILE} }
+
+\date{}
+
+%------------------
+%--------- Document
+%------------------
 \begin{document}
+
 \maketitle
+
+%--------- Abstract
 \begin{abstract}
 We use torsion definition to explore new representation of
 torsion as the field strength of it's gauge field potential.
-
 \end{abstract}
-
-Formally, torsion is defined through \be \label{def1}\l[\nabla _\mu,\nabla_\nu\r]f(\mx)=T_\mu{}^\rho{}_\nu\partial_\rho f(\mx),\ee
-
-thus, we propose to interpret $ \partial_\rho $ as the local group generators, leading us to the conclusion that $\nabla_\mu$ acting on vector fiels must be represented as $\nabla_\mu A^\nu=\partial_\mu A^\nu+\Gamma_\mu{}^\nu{}_\rho A^\rho+\gamma_\mu^\rho\partial_\rho A^\nu,$ 
+%--------- Scattered Ideas
+Formally, torsion is defined through 
+\be 
+\label{def1}
+\l[\nabla _\mu,\nabla_\nu\r]f(x)=T_\mu{}^\rho{}_\nu
+\partial_\rho f(x),
+\ee
+thus, we propose to interpret $ \partial_\rho $ as the local 
+group generators, leading us to the conclusion that the 
+covariant derivative  $\nabla_\mu$ on vector fields 
+must be modified by a new gauge field 
+expanded in it's generators $\gamma_\mu^\nu\partial_\nu$ as 
+\be\nabla_\mu A^\nu \to D_\mu A^\nu=\partial_\mu A^\nu+\Gamma_
+\mu{}^\nu{}_\rho A^\rho+\gamma_\mu^\rho \partial_\rho A^\nu,\ee
+however, it's addition introduces modifications to the explicit 
+relationship of Christopher's symbols and spacetime's 
+curvature that we would like to avoid through the introduction 
+of 
+$\xi_\mu^\nu=\delta_\mu^\nu+
+\gamma_\mu^\nu $ and the substitution
+$\Gamma_\mu{}^\nu{}_\rho\to \xi_\mu^\sigma\Gamma_\sigma{}^\nu
+{}_\rho$, to leave a covariant derivative defined as 
+\be D_\mu A^\nu=\xi_\mu^\sigma\l(\partial_
+\sigma A^\nu+\Gamma_\sigma{}^\nu {}_\rho A^\rho \r)\ee
 which, if we substitute in (\ref{def1}),
+\ba 
+\l[D_\mu,D_\nu\r]f(x)
+&=&\l[ \xi_\mu^\sigma\l(\delta_\nu^
+\rho\partial_\sigma- \Gamma_\sigma{}^\rho{}_\nu 
+\r)\xi_\rho^\lambda\partial_\lambda- \xi_\nu^\sigma\l(\delta_
+\mu^\rho\partial_\sigma- \Gamma_\sigma{}^\rho{}_\mu 
+\r)\xi_\rho^\lambda\partial_\lambda \r]f(x) \nonumber\\ &=& \l[ 
+\xi_{[\mu|}^\sigma\l(\partial_\sigma\xi_{|\nu]}^\lambda-
+\Gamma_\sigma{}^\rho{}_{|\nu]}\xi_\rho^\lambda+\Gamma_\sigma{}^
+\lambda{}_{\rho}\xi_{|\nu]}^\rho\r) - 
+\xi^\sigma_{[\mu|}\Gamma_\sigma{}^\lambda{}_{\rho}\xi_{|\nu]}^
+\rho\r]\partial_\lambda f(x) \\ &=& \l[D_{[\mu} \xi_{\nu]}^\rho-
+\xi_\mu^\lambda\Gamma_{[\lambda}{}^\rho{}_{\sigma]}\xi_\nu^\sigma 
+\r]\partial_\rho f(x)\ea 
 
-\ba \l[\nabla _\mu,\nabla_\nu\r]f(\mx)&=&\lc \lp\delta_\mu^\lambda+\gamma_\mu^\lambda\rp\partial_\lambda \lp\delta_\nu^\rho+\gamma_\nu^\rho\rp\partial_\rho - \Gamma_\mu{}^\rho{}_\nu \lp\delta_\rho^\lambda+\gamma_\rho^\lambda\rp\partial_\lambda\r.  \\ \nonumber && \l. -\lp\delta_\nu^\lambda+\gamma_\nu^\lambda\rp\partial_\lambda \lp\delta_\mu^\rho+\gamma_\mu^\rho\rp\partial_\rho + \Gamma_\nu{}^\rho{}_\mu \lp\delta_\rho^\lambda+\gamma_\rho^\lambda\rp\partial_\lambda \rc f(\mx) \\ &=& \lc\lp\delta_{[\mu|}^\lambda+\gamma_{[\mu|}^\lambda\rp\partial_\lambda \gamma_{|\nu]}^\rho - \Gamma_{[\mu}{}^\lambda{}_{\nu]} \lp\delta_\lambda^\rho+\gamma_\lambda^\rho\rp\partial_\rho \rc f(\mx) \\ &=& \lc - \Gamma_{[\mu}{}^\rho{}_{\nu]}+\partial_{[\mu}\gamma_{\nu]}^\rho + \gamma_{[\mu|}^\lambda\partial_\lambda \gamma_{|\nu]}^\rho- \Gamma_{[\mu}{}^\lambda{}_{\nu]} \gamma_\lambda^\rho \rc\partial_\rho f(\mx)\ea 
+By definition, torsion should be acknowledged as a field strength 
+tensor for the $\xi_\nu^\rho$ gauge potential plus the 
+antisymmetric part of 
+$ \Gamma_{[\mu}{}^\rho{}_{\nu]} $
+\be\label{torsion} T_\mu {}^\lambda {}_\nu = D_{[\mu}\xi_{\nu]}
+^\lambda -\xi_\mu^\rho\Gamma_{[\rho}{} ^\lambda{}_{\sigma]}\xi_\nu
+^\sigma.\ee
 
-By definition, torsion should be acknowledged as a field strength tensor for the $\gamma_\nu^\rho$ plus the antisymmetric part of $ \Gamma_{[\mu}{}^\rho{}_{\nu]} $
-\be T_\mu {}^\rho {}_\nu = \partial_{[\mu}\gamma_{\nu]}^\rho + \gamma_{[\mu|}^\lambda\partial_\lambda \gamma_{|\nu]}^\rho - \Gamma_{[\mu}{}^\rho{}_{\nu]} - \Gamma_{[\mu}{}^\lambda{}_{\nu]} \gamma_\lambda^\rho \ee
+Couplings to $\xi_\mu^\nu$, occurs for every field once we 
+take its covariant derivative. In fact, this covariant
+derivative could be gauged with any local symmetry with
+generators $(t_m)^a_b$ through
+\be D_\mu f^{a}_\nu=\xi_\mu^\lambda\partial_\lambda f^{a}
+_\nu-\xi_\mu^\lambda\Gamma_\lambda{}^\sigma{}_\nu f^{a}_\sigma
++ A_\mu^m (t_m)^a_b f^{b}_\nu \ee
+
+In order to study the modifications to the space of 
+solutions of this modified general relativity, we will start
+setting as Lagrangian of the system the usual Ricci scalar.
+Since Ricci scalar is changed, following the usual definition 
+\be\label{curvdef}\lc \nabla_\mu,\nabla_\nu\rc \omega_\lambda=
+-R_{\mu\nu}{}^\rho{}_\lambda \omega _\rho,\ee
+in order to proceed we  define $\nabla_\nu$ through 
+\be D_\mu=\xi_\mu^\nu\nabla_\nu+ A_\mu^m t_m\ee and distinguish 
+the contorsion tensor $\mathcal K_\mu{}^\lambda{}_\nu$ from the
+metric affine connection $\hat\Gamma_\mu{}^\lambda{}_\nu$ 
+such that  $$\Gamma_\mu{}^\lambda{}_\nu=\hat
+\Gamma_\mu{}^\lambda{}_\nu+ \mathcal K_\mu{}^\lambda{}_\nu$$
+and $\nabla_\mu\omega_\nu= \hat\nabla_\mu\omega_\nu- {\mathcal K}
+_\mu{}^\lambda{}_\nu\omega_\lambda $
+thus, (\ref{torsion}) is rewritten as \be T_\mu {}^\lambda {}_\nu = 
+\xi_{[\mu|}^\rho\hat\nabla_\rho\xi_{|\nu]}^\lambda \ee 
+and (\ref{curvdef}) 
+\ba \l[\nabla_\rho,
+\nabla_\sigma\r]\omega_\lambda&=&
+\hat\nabla_{[\rho}\l( \hat\nabla_{\sigma]} 
+\omega_\lambda-{\mathcal K}_{\sigma]}{}^\kappa{}_\lambda
+\omega_\kappa\rp-{\mathcal K}_{[\rho}{}^{\tau}{}_{\sigma]}
+\l( \hat\nabla_{\tau} \omega_\lambda-{\mathcal 
+K}_{\tau}{}^\kappa{}_\lambda\omega_\kappa\r) \\ && - {\mathcal 
+K}_{[\rho|}{}^{\tau}{}_{\lambda}\l( \hat\nabla_{|\sigma]} 
+\omega_\tau-{\mathcal K}_{|\sigma]}{}^\kappa{}_{\tau}
+\omega_\kappa\rp \\ &=& -\hat R _{\rho\sigma\lambda}{}^\tau\omega
+_\tau-{\mathcal K}_{[\rho}{}^{\tau}{}_{\sigma]} 
+\hat\nabla_{\tau} \omega_\lambda \\ \nonumber && - 
+\l(\hat\nabla_{[\rho}{\mathcal K}_{\sigma]}{}^\kappa{}_\lambda-
+{\mathcal K}_{[\rho}{}^{\tau}{}_{\sigma]} 
+{\mathcal K}_{\tau}{}^\kappa{}_\lambda - 
+{\mathcal K}_{[\rho|}{}^{\tau}{}_{\lambda}{
+\mathcal K}_{|\sigma]}{}^\kappa{}_{\tau}
+\r)\omega_\kappa \ea 
+then, 
+\ba \l[ D_\mu,
+D_\nu\r] \omega_\lambda&=& \xi_{\mu}^\rho\nabla_{[\rho|} 
+\l(\xi_{\nu}^\sigma\nabla_{|\sigma]}\omega_\lambda\r) \\ &=& 
+\l(\xi_{[\mu|}^\rho\nabla_{\rho} \xi_{|\nu]}^\sigma\r)\nabla_{
+\sigma}\omega_\lambda+\xi_{\mu}^\rho \xi_{\nu}^\sigma\l[\nabla_{
+\rho},\nabla_{\sigma}\r]\omega_\lambda
+\\ &=& \l(\xi_{[\mu|}^\rho\hat\nabla _{\rho} \xi_{|\nu]}^\sigma\r)
+\nabla_{\sigma}\omega_\lambda-\xi_{\mu}^\rho 
+\xi_{\nu}^\sigma\hat R_{\rho\sigma\lambda}{}^\tau
+\omega_\tau \\ \nonumber && - \xi_{\mu}^\rho \xi_{\nu}^\sigma 
+\l(\hat\nabla_{[\rho}{\mathcal K}_{\sigma]}{}^\tau{}_\lambda +
+{\mathcal K}_{[\rho|}{}^\tau{}_{\kappa} 
+{\mathcal K}_{|\sigma]}{}^{\kappa}{}_{
+\lambda}\r)\omega_\tau \\ \nonumber &=& 
+\l(\xi_{[\mu|}^\rho\hat\nabla _{\rho} \xi_{|\nu]}^\sigma\r)
+\hat\nabla_{\sigma}\omega_\lambda-\l[ \xi_{[\mu|}^\rho\hat\nabla 
+_{\rho} \xi_{|\nu]}^\sigma 
+{\mathcal K}_{\sigma}{}^\tau{}_\lambda \r. 
+\\ && \nonumber \l. +\xi_{\mu}^\rho 
+\xi_{\nu}^\sigma\l(\hat R_{\rho\sigma\lambda}{}^\tau + 
+\hat\nabla_{[\rho}{\mathcal K}_{\sigma]}{}^\tau{}_\lambda +
+{\mathcal K}_{[\rho|}{}^\tau{}_{\kappa} 
+{\mathcal K}_{|\sigma]}{}^{\kappa}{}_{
+\lambda}\r)\r]\omega_\tau ,\ea 
+parting from the last expression we can build up a scalar that
+plays the role of Lagrangian of the system. In fact, there are in principle 
+
+\ba {\mathcal L}= \sqrt{g}g^{\mu\nu}\ea
 
 \end{document}
